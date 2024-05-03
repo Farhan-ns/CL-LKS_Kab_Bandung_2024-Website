@@ -1,0 +1,216 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "https:\/\/lks24.cyberlabs.co.id"
+        }
+    ],
+    "info": {
+        "name": "API Module Mobile LKS Kab. Bandung 2024",
+        "_postman_id": "36a70349-3040-4b94-855c-ecdb342a23ad",
+        "description": "Dokumentasi untuk penggunaan API Module Mobile LKS Kab. Bandung 2024",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"username\":\"boedi123\",\"password\":\"pass\"}"
+                        },
+                        "description": "Login untuk mendapatkan token otentikasi",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"success\":true,\"code\":200,\"message\":\"Login successful, use the following token for your authentication\",\"data\":\"8|mUyx2tEKIZcr38dJdONFzSlLlNTbw6ljYwwV8Tix75d66e0f\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Budi\",\"username\":\"boedi123\",\"password\":\"pass\",\"address\":\"Jl. Soebroto 321\"}"
+                        },
+                        "description": "Mendaftarkan user baru dan mendapatkan token otentikasi",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"success\":true,\"code\":200,\"message\":\"Registration successful, use the following token for your authentication\",\"data\":{\"user\":{\"name\":\"Hans\",\"username\":\"boedi123\",\"address\":\"Jl. Ahmad Yani 321\",\"email\":\"xyz@mail.com\",\"updated_at\":\"2024-04-29T12:35:13.000000Z\",\"created_at\":\"2024-04-29T12:35:13.000000Z\",\"id\":3},\"token\":\"7|rTSSW51wmig5MIvxstf5g1HxoYtlZUpyKX9dvuuI59ce2cf8\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Produk",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products",
+                            "query": [
+                                {
+                                    "key": "filter%5Bname%5D",
+                                    "value": "Oreo",
+                                    "description": "Memfilter produk berdasarkan nama.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/products?filter%5Bname%5D=Oreo"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Mengambil list produk"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"success\":true,\"code\":200,\"message\":\"List of products fetched\",\"data\":[{\"id\":1,\"name\":\"Popmie\",\"price\":\"6000.00\",\"image\":\"popmie.png\",\"created_at\":\"2024-04-29T02:39:59.000000Z\",\"updated_at\":\"2024-04-29T02:39:59.000000Z\",\"image_link\":\"https:\/\/lks24.cyberlabs.co.id\/img\/popmie.png\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Profile",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/profile"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Mengambil profile pemilik token"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"success\":true,\"code\":200,\"message\":\"Profile fetched\",\"data\":{\"id\":3,\"name\":\"Hans\",\"email\":\"xyz@mail.com\",\"email_verified_at\":null,\"created_at\":\"2024-04-29T12:35:13.000000Z\",\"updated_at\":\"2024-04-29T12:35:13.000000Z\",\"username\":\"boedi123\",\"address\":\"Jl. Ahmad Yani 321\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Transaction",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/transaction",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/transaction"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"products\":[\"velit\"]}"
+                        },
+                        "description": "Membuat transaksi baru"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"success\":true,\"code\":200,\"message\":\"Transaction successful\",\"data\":{\"updated_at\":\"2024-04-29T12:31:43.000000Z\",\"created_at\":\"2024-04-29T12:31:43.000000Z\",\"id\":1,\"transaction_details\":[{\"id\":1,\"product_id\":1,\"quantity\":2,\"subtotal\":\"12000.00\",\"transaction_id\":1,\"created_at\":\"2024-04-29T12:31:44.000000Z\",\"updated_at\":\"2024-04-29T12:31:44.000000Z\",\"product\":{\"id\":1,\"name\":\"Popmie\",\"price\":\"6000.00\",\"image\":\"popmie.png\",\"created_at\":\"2024-04-29T02:39:59.000000Z\",\"updated_at\":\"2024-04-29T02:39:59.000000Z\",\"image_link\":\"https:\/\/lks24.cyberlabs.co.id\/img\/popmie.png\"}},{\"id\":2,\"product_id\":2,\"quantity\":2,\"subtotal\":\"12000.00\",\"transaction_id\":1,\"created_at\":\"2024-04-29T12:31:44.000000Z\",\"updated_at\":\"2024-04-29T12:31:44.000000Z\",\"product\":{\"id\":2,\"name\":\"Niu Green Tea Madu\",\"price\":\"8000.00\",\"image\":\"niu.png\",\"created_at\":\"2024-04-29T02:39:59.000000Z\",\"updated_at\":\"2024-04-29T02:39:59.000000Z\",\"image_link\":\"https:\/\/lks24.cyberlabs.co.id\/img\/niu.png\"}}]}}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "Authorization",
+                "type": "string"
+            }
+        ]
+    }
+}

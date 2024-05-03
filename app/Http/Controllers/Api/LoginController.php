@@ -9,7 +9,14 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Login 
+     * 
+     * Login untuk mendapatkan token otentikasi
+     * 
+     * @unauthenticated
+     * @bodyParam username string required Username Akun. Example: boedi123
+     * @bodyParam password string required Password Akun. Example: pass
+     * @response {"success":true,"code":200,"message":"Login successful, use the following token for your authentication","data":"8|mUyx2tEKIZcr38dJdONFzSlLlNTbw6ljYwwV8Tix75d66e0f"}
      */
     public function __invoke(Request $request)
     {
